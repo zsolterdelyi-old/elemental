@@ -7,7 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class DriverManager {
 
-    private static WebDriver driver = null;
+    private static WebDriver driver;
 
 
     public static WebDriver initDriver(String browser) {
