@@ -32,7 +32,9 @@ public class Login extends TestBase {
     }
 
     @When("^User submit the correct password and username and click to subbmit button$")
-    public void userSubmitTheCorrectPasswordAndUsernameAndClickToSubbmitButton() {
+    public void userSubmitTheCorrectPasswordAndUsernameAndClickToSubbmitButton() throws InterruptedException {
+
+        Thread.sleep(2000);
 
 
         String email = "erdelyizsoltcsaba@gmail.com";
@@ -44,8 +46,9 @@ public class Login extends TestBase {
     }
 
     @Then("^User will be logged in my account area$")
-    public void userWillBeLoggedInMyAccountArea() {
+    public void userWillBeLoggedInMyAccountArea() throws InterruptedException {
 
+        Thread.sleep(2000);
         String pageTitle = driver.getTitle();
         String expactedTitle = "Contul Meu - Elemental";
 
