@@ -8,12 +8,48 @@ public class Header {
     @FindBy(xpath = "//span[contains(text(),'Intră în cont')]")
     private WebElement loginButton;
 
-    public void clickONlogin(){
+    @FindBy(id = "search_query_top")
+    private WebElement searchField;
+
+    @FindBy(xpath = "//div[@id='searchbox_inner']//button[@class='button-search']")
+    private WebElement searchButton;
+
+    @FindBy(xpath = "//a[@id='logo_left']")
+    private WebElement mainLogo;
+
+    @FindBy(xpath = "//a[@title='Ajutor']")
+    private WebElement help;
+
+    @FindBy(xpath = "//span[@class='cart_text']")
+    private WebElement cart;
+
+
+    public void clickONlogin() {
 
         loginButton.click();
     }
 
     public WebElement getLoginButton() {
         return loginButton;
+    }
+
+    public WebElement getSearchField() {
+        return searchField;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getMainLogo() {
+        return mainLogo;
+    }
+
+    public WebElement getHelp() {
+        return help;
+    }
+
+    public WebElement getCart() {
+        return cart;
     }
 }

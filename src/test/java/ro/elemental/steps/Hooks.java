@@ -15,8 +15,9 @@ public class Hooks {
         DriverManager.initDriver(browser);
 
 
+
     }
- //   @After
+   @After
     public void tearDown (Scenario scenario) throws InterruptedException {
 
         Thread.sleep(500);

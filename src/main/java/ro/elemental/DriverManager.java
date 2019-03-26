@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverManager {
 
@@ -34,6 +35,10 @@ public class DriverManager {
             case "internet explorer":
                 System.setProperty("webdriver.ie.driver", Appconfig.getIeDriverPath());
                 driver = new InternetExplorerDriver();
+                break;
+            case "safari":
+                System.setProperty("safari.driver", Appconfig.getSafariDriverPath());
+                driver = new SafariDriver();
                 break;
 
         }

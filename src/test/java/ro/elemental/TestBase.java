@@ -10,7 +10,7 @@ public class TestBase {
 
     public void waitForPageToLoad(long timeoutMillis) {
         do {
-            long waitTime = 500;
+            long waitTime = 1000;
             try {
                 Thread.sleep(waitTime);
             } catch (InterruptedException e) {

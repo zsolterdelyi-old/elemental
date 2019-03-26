@@ -18,12 +18,12 @@ public class Appconfig {
         }
     }
 
-    private static String chromeDriverPath=properties.getProperty("chrome.driver.path");
-    private static String geckoDriverPath=properties.getProperty("gecko.driver.path");
-    private static String ieDriverPath=properties.getProperty("ie.driver.path");
-    private static String macChromeDriverPath=properties.getProperty("mac.chrome.driver.path");
-    private static String macGeckoDriverPath=properties.getProperty("mac.gecko.driver.path");
-
+    private static String chromeDriverPath = properties.getProperty("chrome.driver.path");
+    private static String geckoDriverPath = properties.getProperty("gecko.driver.path");
+    private static String ieDriverPath = properties.getProperty("ie.driver.path");
+    private static String macChromeDriverPath = properties.getProperty("mac.chrome.driver.path");
+    private static String macGeckoDriverPath = properties.getProperty("mac.gecko.driver.path");
+    private static String safariDriverPath = properties.getProperty("safari.driver.path");
 
 
     private static String siteUrl = properties.getProperty("site.url");
@@ -41,7 +41,6 @@ public class Appconfig {
     }
 
 
-
     public static String getMacChromeDriverPath() {
         return macChromeDriverPath;
     }
@@ -52,5 +51,9 @@ public class Appconfig {
 
     public static String getSiteUrl() {
         return siteUrl;
+    }
+
+    public static String getSafariDriverPath() {
+        return safariDriverPath;
     }
 }
