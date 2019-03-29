@@ -23,16 +23,8 @@ public class Header {
     @FindBy(xpath = "//span[@class='cart_text']")
     private WebElement cart;
 
-    @FindBy(xpath = "//div[@class='banner']//h6[contains(text(), 'In the following period our company will move to a new location, consequently there will be delays in sending orders and replying to emails, and some phone numbers will not work temporarily.')]")
-    private WebElement engAlert;
-
-    @FindBy(xpath = "//div[@class='banner']//h6[contains(text(), 'Suntem în curs de mutare într-o locație nouă, ceea ce va cauza în zilele următoare întârzieri la expedierea coletelor. La emailuri vom răspunde cu o mică întârziere și unele numere de telefon nu vor funcționa temporar.')]")
-    private WebElement roAlert;
-
-    @FindBy(xpath = "//div[@class='banner']//h6[contains(text(), 'In the following period our company will move to a new location, consequently there will be delays in sending orders and replying to emails, and some phone numbers will not work temporarily.')]")
-    private WebElement huAlert;
-
-
+    @FindBy(xpath = "//div[@class='banner']//h6")
+    private WebElement AlertMessage;
 
 
 
@@ -66,6 +58,7 @@ public class Header {
         return cart;
     }
 
-
-
+    public WebElement getAlertMessage() {
+        return AlertMessage;
+    }
 }
