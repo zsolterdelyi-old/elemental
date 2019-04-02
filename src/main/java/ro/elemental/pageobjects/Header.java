@@ -26,6 +26,9 @@ public class Header {
     @FindBy(xpath = "//div[@class='banner']//h6")
     private WebElement AlertMessage;
 
+    @FindBy(xpath = "//span[contains(text(), 'Română')]")
+    private WebElement roButtonLink;
+
 
 
 
@@ -58,7 +61,13 @@ public class Header {
         return cart;
     }
 
+    public WebElement getRoButtonLink() {
+        return roButtonLink;
+    }
+
     public WebElement getAlertMessage() {
         return AlertMessage;
+
+
     }
 }

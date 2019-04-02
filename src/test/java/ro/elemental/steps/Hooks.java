@@ -11,7 +11,7 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario){
 
-        String browser= System.getProperty("browser", "macchrome");
+        String browser= System.getProperty("browser", "chrome");
         DriverManager.initDriver(browser);
 
 

@@ -3,3 +3,4 @@ Feature: Alert message
 
   Scenario: Alert message
     Given User start the homepage
+    Then The alert message appear
