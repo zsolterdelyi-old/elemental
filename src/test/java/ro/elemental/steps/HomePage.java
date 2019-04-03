@@ -1,6 +1,7 @@
 package ro.elemental.steps;
 
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import ro.elemental.TestBase;
@@ -12,15 +13,15 @@ public class HomePage extends TestBase {
 
     }
 
-    @When("^User change the <\"([^\"]*)\">$")
-    public void userChangeThe(String language) {
-
-
+    @When("^User change the  ([^\"]*) language$")
+    public void userChangeTheLanguage(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 
-    @Then("^The site <\"([^\"]*)\"> will be changed to the preferred one$")
-    public void theSiteWillBeChangedToThePreferredOne(String language) {
-
-
+    @Then("^The site ([^\"]*) language will be changed to the expected one$")
+    public void theSiteLanguageWillBeChangedToTheExpectedOne(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

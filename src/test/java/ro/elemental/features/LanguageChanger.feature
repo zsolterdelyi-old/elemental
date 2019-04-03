@@ -3,10 +3,10 @@ Feature: Language changer
 
   Scenario Outline: Language changer
     Given User start the homepage
-    When User change the <"language">
-    Then The site <"language"> will be changed to the preferred one
+    When User change the  <preffered> language
+    Then The site <preffered> language will be changed to the expected one
     Examples:
-      | language |
+      | preffered |
       | romana   |
       | magyar   |
       | english  |
