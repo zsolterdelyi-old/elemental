@@ -29,7 +29,11 @@ public class Header {
     @FindBy(xpath = "//span[contains(text(), 'Română')]")
     private WebElement roButtonLink;
 
+    @FindBy(xpath = "//span[contains(text(),'English')]")
+    private WebElement engButtonLink;
 
+    @FindBy(xpath = "//span[contains(text(),'Magyar')]")
+    private WebElement huButtonLink;
 
 
     public void clickONlogin() {
@@ -68,6 +72,13 @@ public class Header {
     public WebElement getAlertMessage() {
         return AlertMessage;
 
+    }
 
+    public WebElement getEngButtonLink() {
+        return engButtonLink;
+    }
+
+    public WebElement getHuButtonLink() {
+        return huButtonLink;
     }
 }

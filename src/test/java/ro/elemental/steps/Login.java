@@ -31,8 +31,8 @@ public class Login extends TestBase {
         header.clickONlogin();
     }
 
-    @When("^User submit the correct password and username and click to subbmit button$")
-    public void userSubmitTheCorrectPasswordAndUsernameAndClickToSubbmitButton() throws InterruptedException {
+    @When("^User submit the correct password and username and click to submit button$")
+    public void userSubmitTheCorrectPasswordAndUsernameAndClickToSubmitButton() throws InterruptedException {
 
         Thread.sleep(2000);
 
@@ -58,5 +58,24 @@ public class Login extends TestBase {
 
     }
 
+    @When("^User submit the incorrect password and username and click to submit button$")
+    public void userSubmitTheIncorrectPasswordAndUsernameAndClickToSubmitButton() throws InterruptedException {
+        Thread.sleep(2000);
+
+
+        String email = "erdelyizsoltcsaba@gmail.com";
+        String password = "password";
+
+
+        login.loginToMyAccount(email, password);
+    }
+
+    @Then("^User get an error message$")
+    public void userGetAnErrorMessage() {
+
+        String alert = login.getAlertMessage().getText();
+        String waitedAlert = "Autentificare esuata";
+        assertThat("You submit the wrong credentials, please verify your password, or email adress. ", waitedAlert, is(alert));
+    }
 }
 

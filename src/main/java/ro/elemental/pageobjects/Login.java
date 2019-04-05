@@ -18,6 +18,9 @@ public class Login {
     @FindBy(xpath = "//a[@title='Recover your forgotten password']")
     private WebElement passwordRecoveryLink;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']//li")
+    private WebElement alertMessage;
+
 
     @FindBy(name = "SubmitLogin")
     private WebElement submitButton;
@@ -42,6 +45,7 @@ public class Login {
         return submitButton;
     }
 
+    public WebElement getAlertMessage() { return alertMessage; }
 
     public void loginToMyAccount(String email, String password) {
 
@@ -50,7 +54,6 @@ public class Login {
         getLoginEmail().sendKeys(email);
         getLoginPassword().sendKeys(password);
         getSubmitButton().click();
-
 
     }
 }
