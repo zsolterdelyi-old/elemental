@@ -11,7 +11,7 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario){
 
-        String browser= System.getProperty("browser", "macchrome");
+        String browser= System.getProperty("browser", "chrome");
         DriverManager.initDriver(browser);
 
 
@@ -21,7 +21,7 @@ public class Hooks {
     public void tearDown (Scenario scenario) throws InterruptedException {
 
         Thread.sleep(500);
-       DriverManager.getDriver().quit();
+      DriverManager.getDriver().quit();
 
 
     }
