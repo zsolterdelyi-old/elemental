@@ -3,5 +3,9 @@ Feature: Language changer
 
   Scenario: Language changer
     Given User start the homepage
-    When User change to the  "preffered" language
-    Then The site "preffered" language will be changed to the expected one
+    When User change to the  "english" language
+    Then The site "english" language will be changed to the expected one
+    And  User change to the  "<romanian>" language
+    Then The site "<romanian>" language will be changed to the expected one
+    And User change to the  "<hungarian>" language
+    Then The site "<hungarian>" language will be changed to the expected one
