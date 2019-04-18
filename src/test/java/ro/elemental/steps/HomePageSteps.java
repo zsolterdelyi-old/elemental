@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import ro.elemental.TestBase;
+import ro.elemental.pageobjects.Footer;
 import ro.elemental.pageobjects.Header;
 
 import static org.hamcrest.CoreMatchers.startsWith;
@@ -15,6 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class HomePageSteps extends TestBase {
     Header header = PageFactory.initElements(driver, Header.class);
+    Footer footer = PageFactory.initElements(driver, Footer.class);
 
     @Then("^The alert message appear$")
     public void theAlertMessageAppear() {
@@ -43,12 +45,21 @@ public class HomePageSteps extends TestBase {
     @When("^I submit my email adress to the newsletter field and click the submit button$")
     public void iSubmitMyEmailAdressToTheNewsletterFieldAndClickTheSubmitButton() {
 
+        footer.getNewsletterPlaceholder().sendKeys(getEmail());
+        footer.getNewsletterButton().click();
+    }
 
+    @And("^I resolv captcha verification$")
+    public void iResolvCaptchaVerification() {
 
 
     }
+
+
+
 
     @Then("^I will succesfully submit my aplication to newsletter$")
     public void iWillSuccesfullySubmitMyAplicationToNewsletter() {
     }
+
 }
