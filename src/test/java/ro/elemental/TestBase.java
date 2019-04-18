@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 public class TestBase {
 
+    String email = "erdelyizsoltcsaba@gmail.com";
+    String password = "Joshua12";
+
     protected WebDriver driver=DriverManager.getDriver();
 
     public void waitForPageToLoad(long timeoutMillis) {
@@ -24,6 +27,14 @@ public class TestBase {
                 .executeScript("return document.readyState")
                 .equals("complete"));
 
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
 }

@@ -13,7 +13,7 @@ import ro.elemental.pageobjects.Header;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class Login extends TestBase {
+public class LoginSteps extends TestBase {
 
     private Header header = PageFactory.initElements(driver, Header.class);
     private ro.elemental.pageobjects.Login login = PageFactory.initElements(driver, ro.elemental.pageobjects.Login.class);
@@ -37,11 +37,10 @@ public class Login extends TestBase {
         Thread.sleep(2000);
 
 
-        String email = "erdelyizsoltcsaba@gmail.com";
-        String password = "Joshua12";
 
 
-        login.loginToMyAccount(email, password);
+
+        login.loginToMyAccount(getEmail(), getPassword());
 
     }
 
@@ -63,11 +62,10 @@ public class Login extends TestBase {
         Thread.sleep(2000);
 
 
-        String email = "erdelyizsoltcsaba@gmail.com";
-        String password = "password";
+       String password = "password";
 
 
-        login.loginToMyAccount(email, password);
+        login.loginToMyAccount(getEmail(), password);
     }
 
     @Then("^User get an error message$")
@@ -76,6 +74,40 @@ public class Login extends TestBase {
         String alert = login.getAlertMessage().getText();
         String waitedAlert = "Autentificare esuata";
         assertThat("You submit the wrong credentials, please verify your password, or email adress. ", waitedAlert, is(alert));
+    }
+
+    @When("^User submit the correct password but no email adress and click to submit button$")
+    public void userSubmitTheCorrectPasswordButNoEmailAdressAndClickToSubmitButton() {
+
+        String emptyEmail = "";
+
+        login.loginToMyAccount(emptyEmail, getPassword());
+    }
+
+    @Then("^User get the empty email error message$")
+    public void userGetTheEmptyEmailErrorMessage() {
+
+        String alert = login.getAlertMessage().getText();
+        String waitedAlert = "Adresa de e-mail este obligatorie";
+        assertThat("You submit the wrong credentials, please verify your password, or email adress. ", waitedAlert, is(alert));
+    }
+
+    @Then("^User get the empty password error message$")
+    public void userGetTheEmptyPasswordErrorMessage() {
+
+        String alert = login.getAlertMessage().getText();
+        String waitedAlert = "Parola este obligatorie";
+        assertThat("You submit the wrong credentials, please verify your password, or email adress. ", waitedAlert, is(alert));
+
+
+    }
+
+    @When("^User submit  correct username but empty password and click to submit button$")
+    public void userSubmitCorrectUsernameButEmptyPasswordAndClickToSubmitButton() {
+
+        String emptyPassword = "";
+
+        login.loginToMyAccount(getEmail(), emptyPassword);
     }
 }
 

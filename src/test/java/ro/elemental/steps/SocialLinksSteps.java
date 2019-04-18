@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-public class Social extends TestBase {
+public class SocialLinksSteps extends TestBase {
 
     Footer footer = PageFactory.initElements(driver, Footer.class);
 
@@ -55,9 +55,9 @@ public class Social extends TestBase {
 
 
     @Then("^A new window with the facebook page will be opened$")
-    public void aNewWindowWithTheFacebookPageWillBeOpened() {
+    public void aNewWindowWithTheFacebookPageWillBeOpened() throws InterruptedException {
         windowHandleChild();
-        //   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         String waitedUrl = "https://www.facebook.com/ElementalEU";
 
@@ -78,16 +78,18 @@ public class Social extends TestBase {
 
 
     @Then("^A new window with the gplus page will be opened$")
-    public void aNewWindowWithTheGplusPageWillBeOpened() {
+    public void aNewWindowWithTheGplusPageWillBeOpened() throws InterruptedException {
         windowHandleChild();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         assertThat("The Gplus page is not opened. ", currentUrl, containsString("accounts.google.com"));
         windowHandleBack();
     }
 
     @Then("^A new window with the instagram page will be opened$")
-    public void aNewWindowWithTheInstagramPageWillBeOpened() {
+    public void aNewWindowWithTheInstagramPageWillBeOpened() throws InterruptedException {
         windowHandleChild();
+        Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         String waitedUrl = "https://www.instagram.com/elemental_eu/";
         assertThat("The instagram page is not opened. ", currentUrl, is(equalTo(waitedUrl)));

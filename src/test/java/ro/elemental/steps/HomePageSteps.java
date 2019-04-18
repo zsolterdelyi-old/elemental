@@ -13,7 +13,7 @@ import ro.elemental.pageobjects.Header;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class HomePage extends TestBase {
+public class HomePageSteps extends TestBase {
     Header header = PageFactory.initElements(driver, Header.class);
 
     @Then("^The alert message appear$")
@@ -42,6 +42,8 @@ public class HomePage extends TestBase {
 
     @When("^I submit my email adress to the newsletter field and click the submit button$")
     public void iSubmitMyEmailAdressToTheNewsletterFieldAndClickTheSubmitButton() {
+
+
 
 
     }
