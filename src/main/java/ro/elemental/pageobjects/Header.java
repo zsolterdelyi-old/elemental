@@ -5,6 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class Header {
 
+
+    @FindBy(xpath = "//button[@id='accept-all-gdpr']")
+    private WebElement gdpr;
+
     @FindBy(xpath = "//span[contains(text(),'Intră în cont')]")
     private WebElement loginButton;
 
@@ -39,6 +43,10 @@ public class Header {
     public void clickONlogin() {
 
         loginButton.click();
+    }
+
+    public WebElement getGdpr() {
+        return gdpr;
     }
 
     public WebElement getLoginButton() {

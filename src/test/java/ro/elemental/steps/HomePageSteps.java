@@ -62,4 +62,9 @@ public class HomePageSteps extends TestBase {
     public void iWillSuccesfullySubmitMyAplicationToNewsletter() {
     }
 
+    @And("^User accept the gdpr$")
+    public void userAcceptTheGdpr() {
+
+        header.getGdpr().click();
+    }
 }

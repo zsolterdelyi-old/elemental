@@ -1,8 +1,10 @@
 Feature: User login
   User with the correct password and username should be able to log into the personal account
 
-  Background:
+
+ Background:
     Given User start the homepage
+   And User accept the gdpr
     And User click to the my account link
 
   Scenario: User login

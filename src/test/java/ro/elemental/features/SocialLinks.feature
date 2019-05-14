@@ -3,6 +3,7 @@ Feature: The social media links in footer should be functional
 
   Background:
     Given User start the homepage
+    And User accept the gdpr
     And I scroll down to the footer
 
 
