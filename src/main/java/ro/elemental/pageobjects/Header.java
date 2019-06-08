@@ -1,5 +1,6 @@
 package ro.elemental.pageobjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,7 +16,7 @@ public class Header {
     @FindBy(id = "search_query_top")
     private WebElement searchField;
 
-    @FindBy(xpath = "//div[@id='searchbox_inner']//button[@class='button-search']")
+    @FindBy(xpath = "//div[@id='searchbox_inner']//button[@name='submit_search']")
     private WebElement searchButton;
 
     @FindBy(xpath = "//a[@id='logo_left']")
@@ -44,6 +45,14 @@ public class Header {
 
         loginButton.click();
     }
+    public void search(String keyword) {
+        searchField.clear();
+        searchField.sendKeys(keyword);
+        searchButton.sendKeys(Keys.ENTER);
+    }
+
+
+
 
     public WebElement getGdpr() {
         return gdpr;

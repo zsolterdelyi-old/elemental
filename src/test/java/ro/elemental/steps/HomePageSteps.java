@@ -5,12 +5,15 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ro.elemental.TestBase;
 import ro.elemental.pageobjects.Footer;
 import ro.elemental.pageobjects.Header;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -49,22 +52,26 @@ public class HomePageSteps extends TestBase {
         footer.getNewsletterButton().click();
     }
 
-    @And("^I resolv captcha verification$")
-    public void iResolvCaptchaVerification() {
 
-
-    }
-
-
-
-
-    @Then("^I will succesfully submit my aplication to newsletter$")
-    public void iWillSuccesfullySubmitMyAplicationToNewsletter() {
-    }
 
     @And("^User accept the gdpr$")
     public void userAcceptTheGdpr() {
 
         header.getGdpr().click();
     }
+
+    @Then("^I will see a captcha verification$")
+    public void iWillSeeACaptchaVerification() {
+
+     //   WebDriverWait wait = new WebDriverWait);
+
+        //  driver.findElement(By.id("#recaptcha-accessible-status"));
+       // driver.findElement(By.xpath("//div[@class='alert alert-danger']")):
+      //  assertTrue(isElementPresent);
+
+
+
+    }
+
+
 }

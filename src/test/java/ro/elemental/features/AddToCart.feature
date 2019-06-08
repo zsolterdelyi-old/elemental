@@ -3,7 +3,9 @@ Feature: I add a product to cart
 
   Scenario: I add the searched item to the cart
     Given User start the homepage
-    And User submit the correct password and username and click to submit button
-    When I search for the wished "item"
-    And I add the "item" to the cart
-    Then The selected "item" should be added to the cart
+    And I search for the wished "Hamamelis"
+    And I open the product page and I add the item to the cart
+    Then The selected "Hamamelis" should be added to the cart
+
+
+

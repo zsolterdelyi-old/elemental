@@ -5,5 +5,4 @@ Feature: Newsletter sign up
     Given User start the homepage
     And I scroll down to the footer
     When I submit my email adress to the newsletter field and click the submit button
-    And  I resolv captcha verification
-    Then I will succesfully submit my aplication to newsletter
+    Then I will see a captcha verification
