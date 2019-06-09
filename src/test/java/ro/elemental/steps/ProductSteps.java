@@ -84,4 +84,43 @@ public class ProductSteps extends TestBase {
 
         Assert.assertTrue(check,true);
     }
+
+    @And("^I add the item to the cart$")
+    public void iAddTheItemToTheCart() {
+
+        driver.findElement(By.xpath("//button[@name='Submit']")).sendKeys(Keys.ENTER);
+
+    }
+
+    @When("^User search for the wished \"([^\"]*)\"$")
+    public void userSearchForTheWished(String produs) {
+        produs = "lavantă";
+
+        header.search(produs);
+    }
+
+    @And("^I open the product page, change the size, and add to cart$")
+    public void iOpenTheProductPageChangeTheSizeAndAddToCart() {
+
+        driver.findElement(By.xpath("//a[contains(text(),'Bază lavantă blândă')]")).click();
+        WebElement radio2 = driver.findElement(By.xpath("//div[@id='st-container']//li[3]//div[1]//span[1]//input[1]"));
+        radio2.click();
+        driver.findElement(By.xpath("//button[@name='Submit']")).sendKeys(Keys.ENTER);
+
+
+    }
+
+    @When("^The selected \"([^\"]*)\" is added to the cart$")
+    public void theSelectedIsAddedToTheCart(String arg0) {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement cart = driver.findElement(By.xpath("//span[@class='cart_text']"));
+        cart.click();
+        String productName="Bază lavantă blândă";
+        String currentItem=driver.findElement(By.xpath("//p[@class='product-name s_title_block']//a[contains(text(),'lavantă')]")).getText();
+
+
+        assertThat("The item is not added to cart", currentItem, is(equalTo(productName)));
+
+
+    }
 }

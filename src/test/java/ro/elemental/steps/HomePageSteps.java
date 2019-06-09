@@ -7,6 +7,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ro.elemental.TestBase;
@@ -74,4 +76,12 @@ public class HomePageSteps extends TestBase {
     }
 
 
+    @Then("^User check out$")
+    public void userCheckOut() {
+
+        Actions builder = new Actions(driver);
+        WebElement element = driver.findElement(By.xpath("//a[@class='linkomlogat']"));
+        builder.moveToElement(element).build().perform();
+        driver.findElement(By.xpath("//a[contains(text(),'Ieșire')]")).click();
+    }
 }
