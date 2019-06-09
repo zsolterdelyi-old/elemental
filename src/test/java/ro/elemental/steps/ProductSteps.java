@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -59,5 +60,28 @@ public class ProductSteps extends TestBase {
 
 
 
+    }
+
+    @And("^I open the product page and I change the size$")
+    public void iOpenTheProductPageAndIChangeTheSize() {
+
+        driver.findElement(By.xpath("//a[contains(text(),'Bază lavantă blândă')]")).click();
+        header.getGdpr().click();
+        WebElement radio1 = driver.findElement(By.xpath("//div[@id='st-container']//li[2]//div[1]//span[1]//input[1]"));
+        radio1.click();
+        WebElement radio2 = driver.findElement(By.xpath("//div[@id='st-container']//li[3]//div[1]//span[1]//input[1]"));
+        radio2.click();
+
+
+
+
+    }
+
+    @Then("^Size should be changed$")
+    public void sizeShouldBeChanged() {
+
+        String check = driver.findElement(By.xpath("//span[contains(@class,'checked')]//input[contains(@name,'group_1')]")).getText();
+
+        Assert.assertTrue(check,true);
     }
 }
